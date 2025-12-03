@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply font-sans text-base text-dark-gray leading-relaxed;
   }
@@ -39,6 +43,41 @@
   
   .card {
     @apply bg-white rounded-lg p-4 shadow-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-large;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+  
+  @keyframes fade-smooth {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-smooth {
+    animation: fade-smooth 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 

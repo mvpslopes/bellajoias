@@ -1,20 +1,34 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { useCart } from '../context/CartContext'
 
 function ProductCard({ product }) {
   const [isWishlisted, setIsWishlisted] = useState(false)
+  const { addToCart } = useCart()
+  const [isAdding, setIsAdding] = useState(false)
+
+  const handleAddToCart = (e) => {
+    e.preventDefault()
+    setIsAdding(true)
+    addToCart(product, 1)
+    setTimeout(() => setIsAdding(false), 500)
+  }
 
   return (
-    <div className="card">
-      <div className="relative w-full aspect-square mb-4 rounded overflow-hidden">
+    <div className="card flex flex-col h-full">
+      <Link to={`/product/${product.id}`} className="relative w-full aspect-square mb-4 rounded overflow-hidden block group">
         <img
           src={product.image || `https://via.placeholder.com/300?text=${encodeURIComponent(product.name)}`}
           alt={product.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <button
-          onClick={() => setIsWishlisted(!isWishlisted)}
-          className="absolute top-2 right-2 w-6 h-6 cursor-pointer text-dark-gray hover:text-red-500 transition-colors"
+          onClick={(e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            setIsWishlisted(!isWishlisted)
+          }}
+          className="absolute top-2 right-2 w-6 h-6 cursor-pointer text-dark-gray hover:text-red-500 transition-colors bg-white/80 rounded-full p-1 z-10"
         >
           <svg
             fill={isWishlisted ? 'currentColor' : 'none'}
@@ -30,34 +44,56 @@ function ProductCard({ product }) {
             />
           </svg>
         </button>
-      </div>
-      
-      <Link to={`/product/${product.id}`}>
-        <h3 className="text-xl font-semibold text-dark-gray mb-2 hover:text-dark-green transition-colors">
-          {product.name}
-        </h3>
       </Link>
       
-      {product.description && (
-        <p className="text-sm text-text-secondary mb-3 leading-relaxed">
-          {product.description}
-        </p>
-      )}
-      
-      <div className="flex items-center gap-2 mb-3">
-        <div className="flex text-yellow-400">
-          {'★'.repeat(5)}
+      <div className="flex flex-col flex-grow">
+        <Link to={`/product/${product.id}`} className="block mb-2">
+          <h3 className="text-xl font-semibold text-dark-gray hover:text-dark-green transition-colors line-clamp-2">
+            {product.name}
+          </h3>
+        </Link>
+        
+        {(product.shortDescription || product.description) && (
+          <p className="text-sm text-text-secondary mb-3 leading-relaxed line-clamp-2 flex-grow">
+            {product.shortDescription || product.description}
+          </p>
+        )}
+        
+        <div className="flex items-center gap-2 mb-3">
+          <div className="flex text-yellow-400 text-sm">
+            {'★'.repeat(5)}
+          </div>
+          <span className="text-sm text-text-secondary">({product.reviews || 0})</span>
         </div>
-        <span className="text-sm text-text-secondary">({product.reviews || 121})</span>
+        
+        <div className="mb-4">
+          {product.originalPrice && product.originalPrice > product.price ? (
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-lg text-text-secondary line-through">
+                R$ {product.originalPrice.toFixed(2).replace('.', ',')}
+              </span>
+              <span className="text-xl font-bold text-dark-green">
+                R$ {product.price.toFixed(2).replace('.', ',')}
+              </span>
+              <span className="text-sm font-semibold text-brand-primary bg-brand-primary/10 px-2 py-1 rounded">
+                {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
+              </span>
+            </div>
+          ) : (
+            <div className="text-xl font-bold text-dark-green">
+              R$ {product.price.toFixed(2).replace('.', ',')}
+            </div>
+          )}
+        </div>
+        
+        <button 
+          onClick={handleAddToCart}
+          className={`w-full btn-primary py-3 mt-auto ${isAdding ? 'opacity-75' : ''}`}
+          disabled={isAdding}
+        >
+          {isAdding ? 'Adicionado!' : 'Adicionar ao Carrinho'}
+        </button>
       </div>
-      
-      <div className="text-xl font-bold text-dark-green mb-4">
-        R$ {product.price.toFixed(2).replace('.', ',')}
-      </div>
-      
-      <button className="w-full btn-primary py-3">
-        Adicionar ao Carrinho
-      </button>
     </div>
   )
 }

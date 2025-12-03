@@ -1,7 +1,10 @@
-import { useState } from 'react'
-import { products } from '../data/products.jsx'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 
 function Checkout() {
+  const navigate = useNavigate()
+  const { cartItems, getTotalPrice, clearCart } = useCart()
   const [selectedPayment, setSelectedPayment] = useState('card')
   const [formData, setFormData] = useState({
     name: '',
@@ -14,9 +17,24 @@ function Checkout() {
     cardNumber: ''
   })
 
-  // Simulando item no carrinho
-  const cartItem = products[1] // AirPods Max
-  const total = cartItem.price
+  // Redirecionar se carrinho estiver vazio
+  useEffect(() => {
+    if (cartItems.length === 0) {
+      navigate('/')
+    }
+  }, [cartItems, navigate])
+
+  const subtotal = getTotalPrice()
+  const shipping = 15.00
+  const total = subtotal + shipping
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Simular processamento do pedido
+    alert('Pedido realizado com sucesso! Obrigado pela compra.')
+    clearCart()
+    navigate('/')
+  }
 
   const handleInputChange = (e) => {
     setFormData({
@@ -32,28 +50,34 @@ function Checkout() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column - Forms */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Review Item */}
+          {/* Review Items */}
           <div className="card p-6">
-            <h2 className="text-xl font-semibold mb-4">Revisar Item e Entrega</h2>
-            <div className="flex gap-4">
-              <img
-                src={cartItem.image}
-                alt={cartItem.name}
-                className="w-20 h-20 rounded object-cover"
-              />
-              <div className="flex-1">
-                <h3 className="text-base font-semibold mb-2">{cartItem.name}</h3>
-                <p className="text-sm text-text-secondary mb-1">Cor: Rosa</p>
-                <p className="text-sm text-text-secondary mb-2">Quantidade: 01</p>
-                <p className="text-base font-bold text-dark-green">
-                  R$ {cartItem.price.toFixed(2).replace('.', ',')}
-                </p>
-              </div>
+            <h2 className="text-xl font-semibold mb-4">Revisar Itens e Entrega</h2>
+            <div className="space-y-4">
+              {cartItems.map((item, index) => (
+                <div key={`${item.id}-${item.selectedColor || 'default'}-${index}`} className="flex gap-4 pb-4 border-b border-medium-gray last:border-0">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-20 h-20 rounded object-cover"
+                  />
+                  <div className="flex-1">
+                    <h3 className="text-base font-semibold mb-2">{item.name}</h3>
+                    {item.selectedColor && (
+                      <p className="text-sm text-text-secondary mb-1">Cor: {item.selectedColor}</p>
+                    )}
+                    <p className="text-sm text-text-secondary mb-2">Quantidade: {item.quantity}</p>
+                    <p className="text-base font-bold text-dark-green">
+                      R$ {(item.price * item.quantity).toFixed(2).replace('.', ',')}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Delivery Information */}
-          <div className="card p-6">
+          <form onSubmit={handleSubmit} className="card p-6">
             <h2 className="text-xl font-semibold mb-4">Informações de Entrega</h2>
             <div className="space-y-4">
               <div>
@@ -156,7 +180,7 @@ function Checkout() {
                 />
               </div>
             </div>
-          </div>
+          </form>
         </div>
 
         {/* Right Column - Order Summary */}
@@ -167,15 +191,15 @@ function Checkout() {
             <div className="space-y-4 mb-6">
               <div className="flex justify-between text-base">
                 <span>Subtotal</span>
-                <span className="font-semibold">R$ {total.toFixed(2).replace('.', ',')}</span>
+                <span className="font-semibold">R$ {subtotal.toFixed(2).replace('.', ',')}</span>
               </div>
               <div className="flex justify-between text-base">
                 <span>Frete</span>
-                <span className="font-semibold">R$ 15,00</span>
+                <span className="font-semibold">R$ {shipping.toFixed(2).replace('.', ',')}</span>
               </div>
               <div className="border-t border-medium-gray pt-4 flex justify-between text-lg font-bold">
                 <span>Total</span>
-                <span className="text-dark-green">R$ {(total + 15).toFixed(2).replace('.', ',')}</span>
+                <span className="text-dark-green">R$ {total.toFixed(2).replace('.', ',')}</span>
               </div>
             </div>
 
@@ -227,7 +251,10 @@ function Checkout() {
               )}
             </div>
 
-            <button className="w-full btn-primary py-4 text-lg">
+            <button
+              onClick={handleSubmit}
+              className="w-full btn-primary py-4 text-lg"
+            >
               Finalizar Pedido
             </button>
           </div>

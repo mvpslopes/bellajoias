@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Nome do Produto",
+    "description": "Descrição detalhada do produto",
+    "shortDescription": "Descrição curta para o card",
+    "price": 0.00,
+    "image": "/images/products/nome-da-imagem.jpg",
+    "images": [
+      "/images/products/nome-da-imagem-1.jpg",
+      "/images/products/nome-da-imagem-2.jpg"
+    ],
+    "reviews": 0,
+    "rating": 5,
+    "colors": ["ouro", "prata", "rosa"],
+    "category": "Anéis",
+    "material": "Ouro 18k",
+    "inStock": true,
+    "tags": ["novo", "promoção", "destaque"]
+  }
+]
+

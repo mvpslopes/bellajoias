@@ -28,6 +28,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'Roboto', 'system-ui', 'sans-serif'],
+        cursive: ['Dancing Script', 'cursive'],
       },
       boxShadow: {
         'small': '0 1px 3px rgba(0,0,0,0.1)',
