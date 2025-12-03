@@ -1,0 +1,850 @@
+{
+  "designSystem": {
+    "name": "BellaJoias Design System",
+    "version": "1.0.0",
+    "description": "Sistema de design baseado em e-commerce moderno com foco em produtos eletrônicos",
+    "philosophy": "Design limpo, moderno e focado na experiência do usuário com ênfase em clareza visual e facilidade de navegação"
+  },
+  "colorPalette": {
+    "primary": {
+      "brandPrimary": {
+        "value": "#c43484",
+        "description": "Cor principal da marca Bella Joias (rosa/magenta) - escolha da cliente - usada em logos, botões principais, textos de destaque e elementos de ação",
+        "usage": ["botões primários", "logo", "textos de destaque", "links ativos", "badges de oferta"]
+      },
+      "brandSecondary": {
+        "value": "#d1b273",
+        "description": "Cor secundária da marca (dourado/bege) - extraída da logo - usada em elementos de destaque e acentos",
+        "usage": ["botões secundários", "elementos de destaque", "badges", "ícones"]
+      },
+      "brandAccent1": {
+        "value": "#a8865b",
+        "description": "Acento marrom dourado - extraído da logo",
+        "usage": ["bordas", "separadores", "elementos decorativos"]
+      },
+      "brandAccent2": {
+        "value": "#f1e39b",
+        "description": "Acento amarelo claro - extraído da logo - usado em backgrounds suaves",
+        "usage": ["hero sections", "backgrounds de destaque", "cards especiais", "highlights"]
+      },
+      "brandAccent3": {
+        "value": "#bc3484",
+        "description": "Acento rosa escuro - extraído da logo",
+        "usage": ["hover states", "elementos interativos"]
+      },
+      "brandAccent4": {
+        "value": "#dc4898",
+        "description": "Acento rosa claro - extraído da logo",
+        "usage": ["hover states claros", "elementos secundários"]
+      },
+      "lightBeige": {
+        "value": "#f1e39b",
+        "description": "Cor de fundo suave (mapeada para brandAccent2)",
+        "usage": ["hero sections", "backgrounds de destaque", "cards especiais"]
+      },
+      "white": {
+        "value": "#ffffff",
+        "description": "Cor de fundo principal e contraste",
+        "usage": ["backgrounds principais", "cards", "header", "footer"]
+      }
+    },
+    "neutral": {
+      "lightGray": {
+        "value": "#f5f5f5",
+        "description": "Barras de filtro e áreas secundárias",
+        "usage": ["barras de filtro", "separadores", "backgrounds secundários"]
+      },
+      "mediumGray": {
+        "value": "#e0e0e0",
+        "description": "Bordas e divisores",
+        "usage": ["bordas de cards", "divisores", "inputs"]
+      },
+      "darkGray": {
+        "value": "#333333",
+        "description": "Textos principais e elementos escuros",
+        "usage": ["textos principais", "títulos", "descrições"]
+      }
+    },
+    "semantic": {
+      "success": "#28a745",
+      "error": "#dc3545",
+      "warning": "#ffc107",
+      "info": "#17a2b8"
+    },
+    "productColors": {
+      "red": "#ff0000",
+      "pink": "#ff69b4",
+      "white": "#ffffff",
+      "black": "#000000",
+      "blue": "#0066cc"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": "sans-serif",
+      "description": "Fonte moderna e legível, preferencialmente Inter, Roboto ou sistema padrão"
+    },
+    "scale": {
+      "hero": {
+        "size": "2.5rem - 3.5rem",
+        "weight": "700",
+        "lineHeight": "1.2",
+        "usage": "Títulos principais em hero sections"
+      },
+      "h1": {
+        "size": "2rem - 2.5rem",
+        "weight": "700",
+        "lineHeight": "1.3",
+        "usage": "Títulos de página principais"
+      },
+      "h2": {
+        "size": "1.75rem - 2rem",
+        "weight": "600",
+        "lineHeight": "1.4",
+        "usage": "Títulos de seção"
+      },
+      "h3": {
+        "size": "1.5rem - 1.75rem",
+        "weight": "600",
+        "lineHeight": "1.4",
+        "usage": "Subtítulos e títulos de cards"
+      },
+      "body": {
+        "size": "1rem",
+        "weight": "400",
+        "lineHeight": "1.6",
+        "usage": "Texto corrido e descrições"
+      },
+      "small": {
+        "size": "0.875rem",
+        "weight": "400",
+        "lineHeight": "1.5",
+        "usage": "Textos secundários, labels, breadcrumbs"
+      },
+      "caption": {
+        "size": "0.75rem",
+        "weight": "400",
+        "lineHeight": "1.4",
+        "usage": "Legendas, badges, informações auxiliares"
+      }
+    },
+    "color": {
+      "primary": "#333333",
+      "secondary": "#666666",
+      "accent": "#1a5d3a",
+      "light": "#999999"
+    }
+  },
+  "spacing": {
+    "scale": {
+      "xs": "0.25rem",
+      "sm": "0.5rem",
+      "md": "1rem",
+      "lg": "1.5rem",
+      "xl": "2rem",
+      "2xl": "3rem",
+      "3xl": "4rem"
+    },
+    "principles": {
+      "componentPadding": "1rem - 1.5rem",
+      "sectionSpacing": "2rem - 3rem",
+      "cardPadding": "1rem",
+      "gridGap": "1.5rem - 2rem"
+    }
+  },
+  "layout": {
+    "container": {
+      "maxWidth": "1200px - 1400px",
+      "padding": "1rem - 2rem",
+      "centered": true
+    },
+    "grid": {
+      "productGrid": {
+        "columns": "4 - 5 em desktop, 2 em tablet, 1 em mobile",
+        "gap": "1.5rem"
+      },
+      "categoryGrid": {
+        "columns": "6 em desktop, 3 em tablet, 2 em mobile",
+        "gap": "1rem"
+      }
+    },
+    "breakpoints": {
+      "mobile": "0px - 768px",
+      "tablet": "768px - 1024px",
+      "desktop": "1024px+"
+    }
+  },
+  "components": {
+    "topBar": {
+      "description": "Barra superior com informações promocionais e contato",
+      "styles": {
+        "backgroundColor": "darkGreen",
+        "color": "white",
+        "padding": "0.75rem 1rem",
+        "fontSize": "small",
+        "display": "flex",
+        "justifyContent": "space-between",
+        "alignItems": "center"
+      },
+      "elements": {
+        "contactInfo": {
+          "fontSize": "small",
+          "color": "white"
+        },
+        "promotionalText": {
+          "fontSize": "small",
+          "fontWeight": "500",
+          "color": "white"
+        }
+      }
+    },
+    "header": {
+      "description": "Cabeçalho principal com logo, navegação e ações do usuário",
+      "styles": {
+        "backgroundColor": "white",
+        "padding": "1rem 2rem",
+        "boxShadow": "0 2px 4px rgba(0,0,0,0.1)",
+        "position": "sticky",
+        "top": 0,
+        "zIndex": 100
+      },
+      "elements": {
+        "logo": {
+          "fontSize": "h2",
+          "fontWeight": "700",
+          "color": "darkGreen",
+          "display": "flex",
+          "alignItems": "center",
+          "gap": "0.5rem"
+        },
+        "navigation": {
+          "links": {
+            "fontSize": "body",
+            "color": "darkGray",
+            "padding": "0.5rem 1rem",
+            "hover": {
+              "color": "darkGreen",
+              "textDecoration": "underline"
+            }
+          }
+        },
+        "searchBar": {
+          "width": "300px - 400px",
+          "padding": "0.75rem 1rem",
+          "border": "1px solid mediumGray",
+          "borderRadius": "4px",
+          "fontSize": "body"
+        },
+        "actionIcons": {
+          "size": "24px",
+          "color": "darkGray",
+          "hover": "darkGreen",
+          "cursor": "pointer"
+        }
+      }
+    },
+    "heroSection": {
+      "description": "Banner principal com imagem de destaque e call-to-action",
+      "styles": {
+        "backgroundColor": "lightBeige",
+        "padding": "3rem - 4rem",
+        "display": "flex",
+        "alignItems": "center",
+        "justifyContent": "space-between",
+        "minHeight": "400px - 500px"
+      },
+      "elements": {
+        "content": {
+          "maxWidth": "50%",
+          "title": {
+            "fontSize": "hero",
+            "fontWeight": "700",
+            "color": "darkGreen",
+            "marginBottom": "1.5rem"
+          },
+          "ctaButton": {
+            "backgroundColor": "darkGreen",
+            "color": "white",
+            "padding": "1rem 2rem",
+            "borderRadius": "8px",
+            "fontSize": "body",
+            "fontWeight": "600",
+            "border": "none",
+            "cursor": "pointer",
+            "hover": {
+              "opacity": "0.9",
+              "transform": "scale(1.02)"
+            }
+          }
+        },
+        "image": {
+          "maxWidth": "50%",
+          "objectFit": "cover",
+          "borderRadius": "8px"
+        }
+      }
+    },
+    "filterBar": {
+      "description": "Barra de filtros e ordenação para produtos",
+      "styles": {
+        "backgroundColor": "lightGray",
+        "padding": "1rem 2rem",
+        "display": "flex",
+        "alignItems": "center",
+        "gap": "1rem",
+        "flexWrap": "wrap"
+      },
+      "elements": {
+        "filterDropdown": {
+          "padding": "0.75rem 1rem",
+          "border": "1px solid mediumGray",
+          "borderRadius": "4px",
+          "backgroundColor": "white",
+          "fontSize": "body",
+          "minWidth": "150px",
+          "cursor": "pointer"
+        },
+        "allFiltersButton": {
+          "padding": "0.75rem 1.5rem",
+          "border": "1px solid darkGreen",
+          "borderRadius": "4px",
+          "backgroundColor": "transparent",
+          "color": "darkGreen",
+          "fontSize": "body",
+          "fontWeight": "500",
+          "cursor": "pointer"
+        },
+        "sortDropdown": {
+          "padding": "0.75rem 1rem",
+          "border": "1px solid mediumGray",
+          "borderRadius": "4px",
+          "backgroundColor": "white",
+          "fontSize": "body",
+          "marginLeft": "auto"
+        }
+      }
+    },
+    "productCard": {
+      "description": "Card de produto para grid de listagem",
+      "styles": {
+        "backgroundColor": "white",
+        "borderRadius": "8px",
+        "padding": "1rem",
+        "boxShadow": "0 2px 8px rgba(0,0,0,0.1)",
+        "transition": "transform 0.2s, box-shadow 0.2s",
+        "hover": {
+          "transform": "translateY(-4px)",
+          "boxShadow": "0 4px 12px rgba(0,0,0,0.15)"
+        }
+      },
+      "elements": {
+        "imageContainer": {
+          "position": "relative",
+          "width": "100%",
+          "aspectRatio": "1:1",
+          "marginBottom": "1rem",
+          "borderRadius": "4px",
+          "overflow": "hidden"
+        },
+        "productImage": {
+          "width": "100%",
+          "height": "100%",
+          "objectFit": "cover"
+        },
+        "wishlistIcon": {
+          "position": "absolute",
+          "top": "0.5rem",
+          "right": "0.5rem",
+          "width": "24px",
+          "height": "24px",
+          "cursor": "pointer",
+          "color": "darkGray",
+          "hover": "red"
+        },
+        "productName": {
+          "fontSize": "h3",
+          "fontWeight": "600",
+          "color": "darkGray",
+          "marginBottom": "0.5rem"
+        },
+        "productDescription": {
+          "fontSize": "small",
+          "color": "secondary",
+          "marginBottom": "0.75rem",
+          "lineHeight": "1.5"
+        },
+        "rating": {
+          "display": "flex",
+          "alignItems": "center",
+          "gap": "0.5rem",
+          "marginBottom": "0.75rem",
+          "stars": {
+            "color": "#ffc107",
+            "fontSize": "body"
+          },
+          "reviewCount": {
+            "fontSize": "small",
+            "color": "secondary"
+          }
+        },
+        "price": {
+          "fontSize": "h3",
+          "fontWeight": "700",
+          "color": "darkGreen",
+          "marginBottom": "1rem"
+        },
+        "addToCartButton": {
+          "width": "100%",
+          "padding": "0.75rem",
+          "backgroundColor": "darkGreen",
+          "color": "white",
+          "border": "none",
+          "borderRadius": "4px",
+          "fontSize": "body",
+          "fontWeight": "600",
+          "cursor": "pointer",
+          "hover": {
+            "opacity": "0.9"
+          }
+        }
+      }
+    },
+    "productDetailPage": {
+      "description": "Página de detalhes do produto",
+      "styles": {
+        "padding": "2rem",
+        "maxWidth": "container"
+      },
+      "elements": {
+        "breadcrumbs": {
+          "fontSize": "small",
+          "color": "secondary",
+          "marginBottom": "1.5rem",
+          "separator": ">",
+          "active": {
+            "color": "darkGreen",
+            "fontWeight": "500"
+          }
+        },
+        "productLayout": {
+          "display": "grid",
+          "gridTemplateColumns": "1fr 1fr",
+          "gap": "3rem"
+        },
+        "productImage": {
+          "width": "100%",
+          "borderRadius": "8px",
+          "aspectRatio": "1:1",
+          "objectFit": "cover"
+        },
+        "productInfo": {
+          "title": {
+            "fontSize": "h1",
+            "fontWeight": "700",
+            "color": "darkGray",
+            "marginBottom": "1rem"
+          },
+          "rating": {
+            "marginBottom": "1rem"
+          },
+          "price": {
+            "fontSize": "h1",
+            "fontWeight": "700",
+            "color": "darkGreen",
+            "marginBottom": "1.5rem"
+          },
+          "colorSelector": {
+            "title": {
+              "fontSize": "body",
+              "fontWeight": "600",
+              "marginBottom": "0.75rem"
+            },
+            "swatches": {
+              "display": "flex",
+              "gap": "0.75rem",
+              "swatch": {
+                "width": "40px",
+                "height": "40px",
+                "borderRadius": "50%",
+                "border": "2px solid mediumGray",
+                "cursor": "pointer",
+                "selected": {
+                  "borderColor": "darkGreen",
+                  "borderWidth": "3px"
+                }
+              }
+            }
+          },
+          "actionButtons": {
+            "display": "flex",
+            "gap": "1rem",
+            "marginTop": "2rem",
+            "buyNow": {
+              "flex": 1,
+              "padding": "1rem 2rem",
+              "backgroundColor": "darkGreen",
+              "color": "white",
+              "border": "none",
+              "borderRadius": "8px",
+              "fontSize": "body",
+              "fontWeight": "600",
+              "cursor": "pointer"
+            },
+            "addToCart": {
+              "flex": 1,
+              "padding": "1rem 2rem",
+              "backgroundColor": "white",
+              "color": "darkGreen",
+              "border": "2px solid darkGreen",
+              "borderRadius": "8px",
+              "fontSize": "body",
+              "fontWeight": "600",
+              "cursor": "pointer"
+            }
+          }
+        },
+        "relatedProducts": {
+          "title": {
+            "fontSize": "h2",
+            "fontWeight": "600",
+            "marginTop": "3rem",
+            "marginBottom": "1.5rem"
+          },
+          "grid": {
+            "display": "grid",
+            "gridTemplateColumns": "repeat(5, 1fr)",
+            "gap": "1rem"
+          }
+        }
+      }
+    },
+    "categoryCard": {
+      "description": "Card de categoria para seção de categorias populares",
+      "styles": {
+        "backgroundColor": "white",
+        "borderRadius": "8px",
+        "padding": "1.5rem",
+        "textAlign": "center",
+        "boxShadow": "0 2px 8px rgba(0,0,0,0.1)",
+        "transition": "transform 0.2s",
+        "hover": {
+          "transform": "translateY(-4px)",
+          "boxShadow": "0 4px 12px rgba(0,0,0,0.15)"
+        }
+      },
+      "elements": {
+        "icon": {
+          "width": "60px",
+          "height": "60px",
+          "margin": "0 auto 1rem",
+          "color": "darkGreen"
+        },
+        "categoryName": {
+          "fontSize": "body",
+          "fontWeight": "600",
+          "color": "darkGray",
+          "marginBottom": "0.5rem"
+        },
+        "itemCount": {
+          "fontSize": "small",
+          "color": "secondary"
+        }
+      }
+    },
+    "checkoutPage": {
+      "description": "Página de checkout e resumo do pedido",
+      "styles": {
+        "display": "grid",
+        "gridTemplateColumns": "2fr 1fr",
+        "gap": "2rem",
+        "padding": "2rem"
+      },
+      "elements": {
+        "reviewSection": {
+          "backgroundColor": "white",
+          "padding": "1.5rem",
+          "borderRadius": "8px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.1)",
+          "marginBottom": "1.5rem",
+          "item": {
+            "display": "flex",
+            "gap": "1rem",
+            "image": {
+              "width": "80px",
+              "height": "80px",
+              "borderRadius": "4px",
+              "objectFit": "cover"
+            },
+            "details": {
+              "productName": {
+                "fontSize": "body",
+                "fontWeight": "600",
+                "marginBottom": "0.5rem"
+              },
+              "attributes": {
+                "fontSize": "small",
+                "color": "secondary",
+                "marginBottom": "0.25rem"
+              },
+              "price": {
+                "fontSize": "body",
+                "fontWeight": "700",
+                "color": "darkGreen"
+              }
+            }
+          }
+        },
+        "deliveryForm": {
+          "backgroundColor": "white",
+          "padding": "1.5rem",
+          "borderRadius": "8px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.1)",
+          "formGroup": {
+            "marginBottom": "1rem",
+            "label": {
+              "fontSize": "small",
+              "fontWeight": "600",
+              "color": "darkGray",
+              "marginBottom": "0.5rem",
+              "display": "block"
+            },
+            "input": {
+              "width": "100%",
+              "padding": "0.75rem",
+              "border": "1px solid mediumGray",
+              "borderRadius": "4px",
+              "fontSize": "body"
+            }
+          }
+        },
+        "orderSummary": {
+          "backgroundColor": "white",
+          "padding": "1.5rem",
+          "borderRadius": "8px",
+          "boxShadow": "0 2px 8px rgba(0,0,0,0.1)",
+          "sticky": true,
+          "top": "2rem",
+          "paymentMethods": {
+            "title": {
+              "fontSize": "body",
+              "fontWeight": "600",
+              "marginBottom": "1rem"
+            },
+            "options": {
+              "display": "flex",
+              "flexDirection": "column",
+              "gap": "0.75rem",
+              "option": {
+                "padding": "0.75rem",
+                "border": "1px solid mediumGray",
+                "borderRadius": "4px",
+                "cursor": "pointer",
+                "selected": {
+                  "borderColor": "darkGreen",
+                  "borderWidth": "2px"
+                }
+              }
+            },
+            "cardInput": {
+              "width": "100%",
+              "padding": "0.75rem",
+              "border": "1px solid mediumGray",
+              "borderRadius": "4px",
+              "marginTop": "0.75rem"
+            }
+          }
+        }
+      }
+    },
+    "button": {
+      "variants": {
+        "primary": {
+          "backgroundColor": "darkGreen",
+          "color": "white",
+          "padding": "0.75rem 1.5rem",
+          "borderRadius": "8px",
+          "fontSize": "body",
+          "fontWeight": "600",
+          "border": "none",
+          "cursor": "pointer",
+          "hover": {
+            "opacity": "0.9",
+            "transform": "scale(1.02)"
+          }
+        },
+        "secondary": {
+          "backgroundColor": "white",
+          "color": "darkGreen",
+          "padding": "0.75rem 1.5rem",
+          "borderRadius": "8px",
+          "fontSize": "body",
+          "fontWeight": "600",
+          "border": "2px solid darkGreen",
+          "cursor": "pointer",
+          "hover": {
+            "backgroundColor": "lightBeige"
+          }
+        },
+        "outline": {
+          "backgroundColor": "transparent",
+          "color": "darkGreen",
+          "padding": "0.75rem 1.5rem",
+          "borderRadius": "4px",
+          "fontSize": "body",
+          "fontWeight": "500",
+          "border": "1px solid darkGreen",
+          "cursor": "pointer"
+        }
+      }
+    },
+    "input": {
+      "styles": {
+        "padding": "0.75rem 1rem",
+        "border": "1px solid mediumGray",
+        "borderRadius": "4px",
+        "fontSize": "body",
+        "width": "100%",
+        "focus": {
+          "outline": "none",
+          "borderColor": "darkGreen",
+          "boxShadow": "0 0 0 3px rgba(26, 93, 58, 0.1)"
+        }
+      }
+    },
+    "sectionTitle": {
+      "description": "Títulos de seção principais",
+      "styles": {
+        "fontSize": "h2",
+        "fontWeight": "700",
+        "color": "darkGray",
+        "marginBottom": "2rem",
+        "textAlign": "left"
+      }
+    }
+  },
+  "principles": {
+    "visualHierarchy": {
+      "description": "Use tamanhos de fonte, pesos e cores para criar hierarquia visual clara",
+      "guidelines": [
+        "Títulos principais devem ser 2-3x maiores que o texto do corpo",
+        "Use darkGreen para elementos de ação e destaque",
+        "Mantenha contraste adequado para acessibilidade (mínimo 4.5:1)"
+      ]
+    },
+    "spacing": {
+      "description": "Espaçamento consistente cria ritmo visual e organização",
+      "guidelines": [
+        "Use a escala de espaçamento de forma consistente",
+        "Mantenha padding interno de cards entre 1rem - 1.5rem",
+        "Espaçamento entre seções deve ser 2rem - 3rem",
+        "Gap em grids deve ser 1.5rem - 2rem"
+      ]
+    },
+    "interactivity": {
+      "description": "Feedback visual claro em interações do usuário",
+      "guidelines": [
+        "Todos os elementos clicáveis devem ter estados hover",
+        "Transições suaves (0.2s - 0.3s) para mudanças de estado",
+        "Cards devem elevar-se ligeiramente no hover",
+        "Botões devem ter feedback visual imediato"
+      ]
+    },
+    "consistency": {
+      "description": "Mantenha consistência visual em todo o aplicativo",
+      "guidelines": [
+        "Use a mesma paleta de cores em todos os componentes",
+        "Mantenha bordas arredondadas consistentes (4px para pequenos, 8px para grandes)",
+        "Sombras devem seguir o mesmo padrão (0 2px 8px rgba(0,0,0,0.1))",
+        "Espaçamento deve seguir a escala definida"
+      ]
+    },
+    "accessibility": {
+      "description": "Design acessível para todos os usuários",
+      "guidelines": [
+        "Contraste de cores adequado (WCAG AA mínimo)",
+        "Tamanhos de fonte legíveis (mínimo 14px para corpo)",
+        "Áreas clicáveis com tamanho mínimo de 44x44px",
+        "Navegação por teclado funcional",
+        "Textos alternativos para imagens"
+      ]
+    },
+    "responsive": {
+      "description": "Design adaptável a diferentes tamanhos de tela",
+      "guidelines": [
+        "Mobile-first approach",
+        "Grids devem reduzir colunas em telas menores",
+        "Padding e espaçamento devem reduzir proporcionalmente",
+        "Navegação deve adaptar-se (menu hambúrguer em mobile)",
+        "Imagens devem ser responsivas (max-width: 100%)"
+      ]
+    }
+  },
+  "patterns": {
+    "productListing": {
+      "description": "Padrão para listagem de produtos",
+      "structure": [
+        "Top Bar (opcional)",
+        "Header",
+        "Hero Section (opcional)",
+        "Filter Bar",
+        "Section Title",
+        "Product Grid",
+        "Pagination (se necessário)"
+      ]
+    },
+    "productDetail": {
+      "description": "Padrão para página de detalhes do produto",
+      "structure": [
+        "Header",
+        "Breadcrumbs",
+        "Product Layout (imagem + informações)",
+        "Related Products Section"
+      ]
+    },
+    "checkout": {
+      "description": "Padrão para processo de checkout",
+      "structure": [
+        "Header",
+        "Review Items Section",
+        "Two-column Layout: Delivery Form | Order Summary",
+        "Payment Methods",
+        "Place Order Button"
+      ]
+    }
+  },
+  "animations": {
+    "transitions": {
+      "duration": "0.2s - 0.3s",
+      "easing": "ease-in-out",
+      "properties": ["transform", "opacity", "box-shadow", "color"]
+    },
+    "hoverEffects": {
+      "cards": "translateY(-4px) + increased shadow",
+      "buttons": "opacity 0.9 + scale(1.02)",
+      "links": "color change + underline"
+    }
+  },
+  "shadows": {
+    "small": "0 1px 3px rgba(0,0,0,0.1)",
+    "medium": "0 2px 8px rgba(0,0,0,0.1)",
+    "large": "0 4px 12px rgba(0,0,0,0.15)",
+    "usage": {
+      "cards": "medium",
+      "header": "small",
+      "hover": "large"
+    }
+  },
+  "borderRadius": {
+    "small": "4px",
+    "medium": "8px",
+    "large": "12px",
+    "full": "50%",
+    "usage": {
+      "buttons": "medium",
+      "cards": "medium",
+      "inputs": "small",
+      "colorSwatches": "full"
+    }
+  }
+}
+
